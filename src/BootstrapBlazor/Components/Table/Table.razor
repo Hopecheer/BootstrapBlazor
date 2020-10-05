@@ -264,6 +264,17 @@
             @foreach (var item in Items)
             {
                 @RenderRow.Invoke(item)
+                if (DetailRowTemplate != null)
+                {
+                    <tr class="is-detail">
+                        <td>&nbsp;</td>
+                        <td colspan="@Columns.Count">
+                            <div class="table-cell is-wrap">
+                                @DetailRowTemplate.Invoke(item)
+                            </div>
+                        </td>
+                    </tr>
+                }
             }
         </tbody>
         @if (ShowFooter)
