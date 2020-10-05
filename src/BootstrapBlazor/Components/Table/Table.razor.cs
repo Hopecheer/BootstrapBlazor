@@ -63,6 +63,12 @@ namespace BootstrapBlazor.Components
         public List<ITableColumn> Columns { get; } = new List<ITableColumn>(50);
 
         /// <summary>
+        /// 获得/设置 明细行模板
+        /// </summary>
+        [Parameter]
+        public RenderFragment<TItem>? DetailRowTemplate { get; set; }
+
+        /// <summary>
         /// 获得/设置 TableHeader 实例
         /// </summary>
         [Parameter]
