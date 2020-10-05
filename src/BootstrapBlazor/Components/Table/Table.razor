@@ -282,6 +282,10 @@
 
 RenderFragment<bool> RenderColgroup => hasScroll =>
 @<colgroup>
+    @if (DetailRowTemplate != null)
+    {
+        <col width="24" />
+    }
     @if (IsMultipleSelect)
     {
         @if (ShowCheckboxText)
@@ -323,6 +327,12 @@ RenderFragment<bool> RenderHeader => hasScroll =>
     else
     {
         <tr>
+            @if (DetailRowTemplate != null)
+            {
+                <th>
+                    <div class="table-cell">&nbsp;</div>
+                </th>
+            }
             @if (IsMultipleSelect)
             {
                 <th class="@CheckboxColumnClass">
@@ -378,6 +388,14 @@ RenderFragment<bool> RenderHeader => hasScroll =>
 
 RenderFragment<TItem> RenderRow => item =>
 @<tr class="@GetRowClassString(item)" @onclick="@(EventCallback.Factory.Create<MouseEventArgs>(this, e => ClickRow(item)))" @ondblclick="@(EventCallback.Factory.Create<MouseEventArgs>(this, e => DoubleClickRow(item)))">
+    @if (DetailRowTemplate != null)
+    {
+        <td>
+            <div class="table-cell is-bar is-collapsed">
+                <i class="fa fa-caret-right"></i>
+            </div>
+        </td>
+    }
     @if (IsMultipleSelect)
     {
         <td>
