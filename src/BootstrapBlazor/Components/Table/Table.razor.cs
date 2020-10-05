@@ -178,14 +178,14 @@ namespace BootstrapBlazor.Components
                 await QueryAsync();
             }
 
-            if (!string.IsNullOrEmpty(methodName))
+            if (!firstRender) IsRendered = true;
+
+            if (!string.IsNullOrEmpty(methodName) && IsRendered)
             {
                 // 固定表头脚本关联
                 await JSRuntime.InvokeVoidAsync(TableElement, "bb_table", methodName);
                 methodName = null;
             }
-
-            if (!firstRender) IsRendered = true;
         }
 
         /// <summary>
