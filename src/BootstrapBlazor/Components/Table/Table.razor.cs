@@ -40,6 +40,7 @@ namespace BootstrapBlazor.Components
         protected string? GetRowClassString(TItem item, string? css = null) => CssBuilder.Default(css)
             .AddClass(SetRowClassFormatter?.Invoke(item))
             .AddClass("active", CheckActive(item))
+            .AddClass("is-master", DetailRowTemplate != null)
             .Build();
 
         /// <summary>
