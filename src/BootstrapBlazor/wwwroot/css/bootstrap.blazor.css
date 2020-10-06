@@ -1542,6 +1542,10 @@ input:disabled,
     .table .is-detail.show {
         display: table-row;
     }
+
+.table .table-cell .table-container {
+    flex: 1;
+}
 /*end table*/
 
 /*popover confirm*/
