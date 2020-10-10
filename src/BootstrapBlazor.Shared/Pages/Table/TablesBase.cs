@@ -218,8 +218,8 @@ namespace BootstrapBlazor.Shared.Pages
                 Name = "EditMode",
                 Description = "设置编辑行数据模式",
                 Type = "EditMode",
-                ValueList = "PopupEditForm|EditForm",
-                DefaultValue = "PopupEditForm"
+                ValueList = "Popup|Inline|InCell",
+                DefaultValue = "Popup"
             },
             new AttributeItem() {
                 Name = "HeaderTemplate",
