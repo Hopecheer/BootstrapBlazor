@@ -8,11 +8,16 @@
         /// <summary>
         /// 弹窗式编辑模式
         /// </summary>
-        PopupEditForm,
+        Popup,
 
         /// <summary>
-        /// 编辑表单模式
+        /// 行内编辑模式
         /// </summary>
-        EditForm
+        Inline,
+
+        /// <summary>
+        /// 单元格内编辑模式
+        /// </summary>
+        InCell
     }
 }
